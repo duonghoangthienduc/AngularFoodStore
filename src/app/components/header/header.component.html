@@ -1,0 +1,77 @@
+<nz-header style=" background-color: #191919; height: 120px;" nz-row>
+  <a href="">
+    <div class="logo" nz-col nzSpan="4">
+      <img src="../../../assets/images/Logo.png" alt="" >
+    </div>
+  </a>
+  <ul nz-menu  nzMode="horizontal" >
+    <li nz-menu-item ><span title>Trang chủ</span>
+      <a href="" target="" rel=""></a>
+    </li>
+    <li nz-submenu nzTitle="Thực đơn">
+      <ul>
+        <li nz-submenu nzTitle="Đồ ăn" >
+          <ul>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','1']">Burger</a>
+            </li>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','2']">Gà rán</a>
+            </li>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','3']">Tráng miệng</a>
+            </li>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','4']">Cơm</a>
+            </li>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','5']">Combo</a>
+            </li>
+            <li nz-menu-item>
+              <a href="" target="" rel="" [routerLink]="['/product-category','7']">Bánh Muffin</a>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <a href="" target="" rel="" [routerLink]="['/product-category','6']">Thức uống</a>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzTitle="Tìm hiểu">
+      <ul>
+        <li nz-menu-item>
+          <a href="" target="" rel="">Lịch sử</a>
+        </li>
+        <li nz-menu-item>
+          <a href="" target="" rel="">Giới thiệu</a>
+        </li>
+
+      </ul>
+    </li>
+    <li nz-menu-item><span title>Tin tức</span>
+      <a href="not-found" target="" rel=""></a>
+    </li>
+    <li nz-menu-item >
+      <span title>Liên hệ</span>
+      <a href="contact" target="" rel=""></a>
+    </li>
+
+    <li nz-menu-item >
+      <span title >
+          Hệ thống cửa hàng
+    </span>
+      <a href="address" target="" rel=""></a>
+    </li>
+    <li nz-menu-item >
+          <span title >
+            <nz-badge  [nzCount]="cartLength">
+              <button nz-button nzType="primary"  nzSize="large" nzBlock="true" nzShape="round" nzDanger>
+                <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                Giỏ hàng
+              </button>
+            </nz-badge>
+          </span>
+          <a href="cart" target="" rel=""></a>
+        </li>
+  </ul>
+</nz-header>

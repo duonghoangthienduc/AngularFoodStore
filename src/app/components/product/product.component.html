@@ -1,0 +1,31 @@
+<nz-content class="detailFood">
+  <div nz-row style="padding: 24px 0;">
+    <div nz-col nzSpan="12">
+      <img src="{{product.image}}" alt="{{product.productName}}" height="460px" width="100%">
+    </div>
+    <div nz-col nzSpan="6" nzOffset="1" style="padding-top: 24px;">
+      <h1 style="color: #ffff;">{{product.productName | uppercase}}</h1>
+      <nz-rate [ngModel]="randomStar" nzAllowHalf></nz-rate>
+      <p class="quantity">
+        <span class="quantity-title">
+          SỐ LƯỢNG:
+        </span>
+        <nz-input-number [(ngModel)]="quantityProduct"
+        [nzMin]="1" [nzMax]="10" [nzStep]="1" nzSize="large" >
+        </nz-input-number>
+      </p>
+      <p class="currency">
+        GIÁ: {{product.price | currency: 'VND':'' }} VNĐ
+      </p>
+      <button nz-button nzType="primary"
+      nzDanger nzBlock="true"
+      nzShape="round" nzSize="large" (click)="getToCart(product)">Đặt hàng ngay</button>
+    </div>
+  </div>
+
+
+  <div class="inner-content" >
+    <app-swipe-product [id]="7" ></app-swipe-product>
+  </div>
+</nz-content>
+

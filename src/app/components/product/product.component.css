@@ -1,0 +1,25 @@
+.waiting-data-respone{
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 50px 50px;
+  margin: 20px 0;
+  width: 100%;
+  height: 100%;
+}
+
+.detailFood{
+  background-image: url('../../../assets/images/bg-combo.png');
+  width: 100%;
+  color: #ffffff;
+}
+.quantity{
+  padding: 14px 0 ;
+}
+.quantity-title{
+  font-size: 24px;
+}
+.currency{
+  font-size: 24px;
+  line-height: 1.34;
+}

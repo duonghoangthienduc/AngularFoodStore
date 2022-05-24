@@ -1,0 +1,51 @@
+<h3 class="tilte-form"  nz-typography
+nzType="secondary"
+style="text-transform: uppercase;">Liên hệ với chúng tôi</h3>
+
+<form nz-form  nzLayout="vertical" >
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5">Họ và tên</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Bạn chưa nhập họ và tên">
+      <input nz-input [(ngModel)]="hoten"
+      placeholder="Mời bạn nhập họ và tên"
+      name="hoten" required />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5">Email</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Bạn chưa nhập Email">
+      <input nz-input [(ngModel)]="email"
+      placeholder="Mời bạn nhập Email"
+      name="email" type="email" email />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5">Số điện thoại</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Bạn chưa nhập số điện thoại">
+      <input nz-input minlength="10"
+      [(ngModel)]="sdt" placeholder="Mời bạn nhập số điện thoại"
+      name="sdt" required />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5">Tiêu đề liên hệ</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Bạn chưa nhập tiêu đề">
+      <input nz-input
+      placeholder="Mời bạn nhập tiêu đề"
+      name="tieude" required />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5">Nội dung liên hệ</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Bạn chưa nhập nội dung liên hệ">
+      <textarea nz-input style="height: 100px;"
+      placeholder="Nội dung"
+      name="noidung" required ></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzXs]="{ span: 24, offset: 0 }" [nzSm]="{ span: 20, offset: 4 }">
+      <button nz-button nzType="primary" (click)="submitForm()">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

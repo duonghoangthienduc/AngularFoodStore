@@ -1,0 +1,92 @@
+
+<nz-footer>
+  <div nz-row>
+    <div nz-col nzSpan="8">
+      <p class="logo">
+        <img src="../../../assets/images/Logo.png" alt="logo" width="120px" height="120px">
+      </p>
+      <h3>Subscribe for promotional updates</h3>
+      <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+        <input type="text" [(ngModel)]='info' name='info' nz-input placeholder="input email" />
+      </nz-input-group>
+      <ng-template #suffixButton>
+        <button nz-button nzType="primary" nzSize="large" (click)="notice()">SEND</button>
+      </ng-template>
+    </div>
+    <div nz-col nzSpan="6" >
+      <h3>MORE INFORMATION</h3>
+      <p>
+        <a href="">
+          Introduction
+        </a>
+
+      </p>
+      <p>
+        <a href="not-found">
+          News
+        </a>
+
+      </p>
+      <p>
+        <a href="">
+          Promotion
+        </a>
+
+      </p>
+      <p>
+        <a href="">
+          Career Opportunities
+        </a>
+
+      </p>
+      <p>
+        <a href="">
+          Franchising
+        </a>
+
+      </p>
+    </div>
+    <div nz-col nzSpan="6" >
+      <h3>SUPPORT</h3>
+      <p>
+        <a href="">Bouchée's Terms of Use</a>
+      </p>
+      <p>
+        <a href="">Privacy Policy</a>
+      </p>
+      <p>
+        <a href="">Delivery Policy</a>
+      </p>
+      <p>
+        <a href="contact">Contact</a>
+      </p>
+    </div>
+    <div nz-col nzSpan="3" style="text-align: left">
+      <h3>FOLLOW US</h3>
+      <p>
+        <a href="https://www.facebook.com" target="https://www.facebook.com">
+          <i nz-icon nzType="facebook" nzTheme="fill"></i>  Facebook
+        </a>
+      </p>
+      <p>
+        <a href="https://www.instagram.com" target="https://www.instagram.com">
+          <i nz-icon nzType="instagram" nzTheme="fill"></i>  Instagram
+        </a>
+      </p>
+      <p>
+        <a href="https://www.youtube.com" target="https://www.youtube.com">
+          <i nz-icon nzType="youtube" nzTheme="fill"></i>  Youtube
+        </a>
+      </p>
+      <p>
+        <a href="https://github.com" target="https://github.com">
+          <i nz-icon nzType="github" nzTheme="fill"></i>  Github
+        </a>
+      </p>
+    </div>
+  </div>
+
+</nz-footer>
+<div class="end-footer">
+  © Bouchée Design By DHTD 2022
+</div>

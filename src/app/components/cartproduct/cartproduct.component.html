@@ -1,0 +1,75 @@
+<nz-content>
+  <div class="inner-content">
+  <nz-empty *ngIf="listCart.length != 0 ? false: list"
+    nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+    [nzNotFoundContent]="contentTpl"
+    >
+      <ng-template #contentTpl>
+        <span>
+          Bạn chưa mua hàng vui lòng
+          <a href="">Đặt hàng & Mua hàng</a>
+        </span>
+      </ng-template>
+    </nz-empty>
+
+    <nz-list #list>
+
+
+      <div nz-result-title *ngIf="listCart.length >0">Hóa Đơn Sản Phẩm</div>
+
+      <nz-list-item *ngFor="let cart of listCart">
+
+        <label nz-checkbox [(ngModel)]="cart.checked" ></label>
+
+        <ng-container>
+          <nz-list-item-extra>
+            <img width="200px" alt="logo" src="{{cart.product.image}}" />
+          </nz-list-item-extra>
+          <nz-list-item-meta nzDescription="Tên sản phẩm: ">
+            <nz-list-item-meta-title>
+              {{cart.product.productName}}
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-title>
+              Đơn giá: {{cart.product.price| currency: 'VND':'' }} VNĐ
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-title>
+              Số lượng:
+              <nz-input-number
+                [(ngModel)]="cart.quantity" [nzMin]="1" [nzDisabled]="!cart.checked">
+              </nz-input-number>
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+            Thành tiền: {{cart.product.price * cart.quantity | currency: 'VND':'' }} VNĐ
+
+          <ul nz-list-item-actions>
+            <nz-list-item-action >
+              <a *ngIf="cart.checked"
+              (click)="updateCartAmount((cart.quantity).toString(),cart.product.productId)">
+                UPDATE
+              </a>
+            </nz-list-item-action>
+            <nz-list-item-action>
+              <a (click)="deleteCart(cart.product.productId)">DELETE</a>
+            </nz-list-item-action>
+          </ul>
+        </ng-container>
+
+
+      </nz-list-item>
+      <nz-list-footer *ngIf="totalAmount>0">
+        <div nz-row>
+          <div nz-col nzSpan="6" nzOffset="6">
+            <p>Tổng số sản phẩm: {{totalAmount}}</p>
+            Tổng giá: {{totalPrice| currency: 'VND':'' }} VNĐ
+          </div>
+          <!-- <div nz-col nzSpan="6" nzOffset="6">
+            <button nz-button nzType="primary" nzDanger="true">Thanh toán</button>
+          </div> -->
+        </div>
+
+      </nz-list-footer>
+
+    </nz-list>
+
+  </div>
+</nz-content>

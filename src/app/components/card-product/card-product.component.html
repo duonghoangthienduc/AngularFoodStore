@@ -1,0 +1,33 @@
+<div class="waiting-data-respone" *ngIf="show">
+  <nz-spin nzSimple></nz-spin>
+</div>
+  <h2
+  nz-typography
+  nzType="secondary"
+  style="text-transform: uppercase; margin: 5px 20px"
+  >
+  {{ nameTag }}
+  </h2>
+ <div nz-row id="productList">
+    <div nz-col nzSpan="6" *ngFor="let product of dataProds">
+      <a  [routerLink]="['/product-detail',product.productId]">
+        <nz-card
+          nzHoverable
+          style="width: auto; margin: 15px"
+          [nzCover]="coverTemplate"
+        >
+          <nz-card-meta
+            nzTitle="{{ product.productName }}"
+            nzDescription="{{ product.price| currency: 'VND':'' }} VNĐ"
+          ></nz-card-meta>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="{{ product.productName }}"
+            src="{{ product.image }}"
+            height="190px"
+          />
+        </ng-template>
+      </a>
+    </div>
+  </div>

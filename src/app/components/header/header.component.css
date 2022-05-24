@@ -1,0 +1,16 @@
+.logo>img {
+  width: 120px;
+  height: 120px;
+  margin-left: 50px;
+  float: left;
+}
+
+[nz-menu] {
+  line-height: 120px;
+  background-color: #191919;
+  color: whitesmoke;
+  font-size: 18px;
+  height: fit-content;
+}
+
+

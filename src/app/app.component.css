@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+nz-layout {
+  margin-bottom: 48px;
+}
+
+nz-layout nz-layout,
+nz-layout:last-child {
+  margin: 0;
+}
+
+
