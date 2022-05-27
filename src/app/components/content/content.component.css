@@ -7,3 +7,16 @@
   min-height: 280px;
 } */
 
+.banner{
+  height: 180px;
+  background-image: url('/assets/images/ads2.jpg');
+  width:-webkit-fill-available;
+  background-size: 1162px;
+  background-repeat: no-repeat;
+}
+.headerbanner{
+  text-align: center;
+  padding: 32px ;
+  font-weight: bold;
+}
+

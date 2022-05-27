@@ -41,6 +41,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -53,6 +56,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormComponent } from './components/form/form.component';
 import { NotfoundpageComponent } from './components/notfoundpage/notfoundpage.component';
 import { ListProductComponent } from './components/list-product/list-product.component';
+import { LoginComponent } from './backend/components/login/login.component';
+import { MainClientComponent } from './components/main-client/main-client.component';
+import { MainAdminComponent } from './backend/components/main-admin/main-admin.component';
+import { IndexBackendComponent } from './backend/components/index-backend/index-backend.component';
+import { TabledataComponent } from './backend/components/tabledata/tabledata.component';
 
 registerLocaleData(en);
 
@@ -73,6 +81,11 @@ registerLocaleData(en);
     FormComponent,
     NotfoundpageComponent,
     ListProductComponent,
+    LoginComponent,
+    MainClientComponent,
+    MainAdminComponent,
+    IndexBackendComponent,
+    TabledataComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +118,10 @@ registerLocaleData(en);
     NzListModule,
     NzMessageModule,
     NzBadgeModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzDescriptionsModule,
+    NzDividerModule,
+    NzTableModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

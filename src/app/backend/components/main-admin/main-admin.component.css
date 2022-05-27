@@ -1,0 +1,64 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 75px;
+  background-image: url('/assets/images/Logo.png');
+  background-size: 75px;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin: 6px;
+}
+.logoChange{
+  height: 100px;
+  background-image: url(/assets/images/Logo.png);
+  background-size: 160px;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin: 16px;
+}
+
+nz-header {
+  background: black;
+  opacity:0.5;
+  padding: 0;
+}
+
+i{
+  color: #fff;
+}
+
+.labelLogin{
+  color: #fff;
+  line-height: 64px;
+  font-size: 16px;
+  padding:2px 32px 0 ;
+  float: right;
+}
+.labelLogin a:hover{
+  color: #1890ff;
+}
+
+nz-content {
+  margin: 0 2px;
+}
+
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 590px;
+}
+
+nz-footer {
+  text-align: center;
+}

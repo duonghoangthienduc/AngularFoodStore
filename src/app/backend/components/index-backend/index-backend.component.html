@@ -1,0 +1,24 @@
+<nz-card nzTitle="Thông tin người dùng">
+    <nz-descriptions nzLayout="vertical">
+      <nz-descriptions-item nzTitle="Họ và tên">
+        {{user.firstName}}
+        {{user.middleName}}
+        {{user.lastName}}
+      </nz-descriptions-item>
+
+      <nz-descriptions-item nzTitle="Telephone">
+        {{user.phone}}
+      </nz-descriptions-item>
+
+      <nz-descriptions-item nzTitle="Address">
+        {{user.address}}
+      </nz-descriptions-item>
+
+      <nz-descriptions-item nzTitle="Email">
+        {{user.email}}
+      </nz-descriptions-item>
+
+    </nz-descriptions>
+</nz-card>
+
+<app-tabledata></app-tabledata>

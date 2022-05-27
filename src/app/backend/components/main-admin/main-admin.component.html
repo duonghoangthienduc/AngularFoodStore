@@ -1,0 +1,51 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" *ngIf="isLoggedIn">
+    <div class="logo" *ngIf="isCollapsed">
+    </div>
+    <div class="logoChange" *ngIf="!isCollapsed">
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzTitle="User" nzIcon="user">
+        <ul>
+          <li nz-menu-item>Info</li>
+          <li nz-menu-item>
+            <a (click)="logout()">Logout</a>
+          </li>
+
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="file"></i>
+        <span>File</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header *ngIf="isLoggedIn">
+
+
+           <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"></i>
+
+        <div class="labelLogin">
+        Xin chào, {{user.userName}}
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="logout()">Logout</a>
+        </div>
+
+
+
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>  © Bouchée Design By DHTD 2022</nz-footer>
+  </nz-layout>
+</nz-layout>
