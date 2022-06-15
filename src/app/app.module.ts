@@ -44,6 +44,12 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+
+import { NgChartsModule } from 'ng2-charts';
 
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -58,9 +64,18 @@ import { NotfoundpageComponent } from './components/notfoundpage/notfoundpage.co
 import { ListProductComponent } from './components/list-product/list-product.component';
 import { LoginComponent } from './backend/components/login/login.component';
 import { MainClientComponent } from './components/main-client/main-client.component';
+import { FormDataComponent } from './components/form-data/form-data.component';
 import { MainAdminComponent } from './backend/components/main-admin/main-admin.component';
-import { IndexBackendComponent } from './backend/components/index-backend/index-backend.component';
-import { TabledataComponent } from './backend/components/tabledata/tabledata.component';
+import { DashboardComponent } from './backend/components/dashboard/dashboard.component';
+import { InfoComponent } from './backend/components/info/info.component';
+import { ListcustomerComponent } from './backend/components/listcustomer/listcustomer.component';
+import { ProductStoreComponent } from './backend/components/product-store/product-store.component';
+import { CategoryListComponent } from './backend/components/category-list/category-list.component';
+import { TagListComponent } from './backend/components/tag-list/tag-list.component';
+import { BillListComponent } from './backend/components/bill-list/bill-list.component';
+
+
+
 
 registerLocaleData(en);
 
@@ -83,9 +98,16 @@ registerLocaleData(en);
     ListProductComponent,
     LoginComponent,
     MainClientComponent,
+    FormDataComponent,
     MainAdminComponent,
-    IndexBackendComponent,
-    TabledataComponent
+    DashboardComponent,
+    InfoComponent,
+    ListcustomerComponent,
+    ProductStoreComponent,
+    CategoryListComponent,
+    TagListComponent,
+    BillListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -94,6 +116,7 @@ registerLocaleData(en);
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgChartsModule,
     NzCardModule,
     NzLayoutModule,
     NzMenuModule,
@@ -122,6 +145,10 @@ registerLocaleData(en);
     NzDescriptionsModule,
     NzDividerModule,
     NzTableModule,
+    NzDropDownModule,
+    NzModalModule,
+    NzCalendarModule,
+    NzAlertModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

@@ -26,9 +26,11 @@ export class LoginComponent implements OnInit {
               private tokenStorage: TokenService,
               private message: NzMessageService,
               private notification: NzNotificationService,
+              private route: Router
               ){ }
 
   ngOnInit(): void {
+    console.log(this.tokenStorage.getUser());
     if (this.tokenStorage.getUser() != null) {
       this.isLoggedIn = true;
     }
@@ -37,13 +39,14 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     const { username, password } = this.LoginForm;
+
     this.authService.login(username, password).subscribe({
       next: data => {
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.reloadPage();
-        this.notification.success('Chào mừng trở lại '+data.firstName,'');
+        this.notification.success('Chào mừng trở lại '+data.lastName,'');
 
       },
       error: err => {
@@ -54,6 +57,7 @@ export class LoginComponent implements OnInit {
     }
     reloadPage(): void {
       window.location.reload();
+      window.location.replace('admin/dashboard')
     }
 }
 

@@ -1,5 +1,5 @@
 export class User{
-  userId ?:Number;
+  userId !:number;
   userName = '';
   userPass = '';
   firstName = '';

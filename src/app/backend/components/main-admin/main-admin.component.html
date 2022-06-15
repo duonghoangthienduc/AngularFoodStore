@@ -5,39 +5,77 @@
     <div class="logoChange" *ngIf="!isCollapsed">
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
+
+      <li nz-menu-item>
+        <i nz-icon nzType="dashboard"></i>
+        <span routerLink="dashboard" >Dashboard</span>
+      </li>
       <li nz-submenu nzTitle="User" nzIcon="user">
         <ul>
-          <li nz-menu-item>Info</li>
+          <span routerLink="info" >
+            <li nz-menu-item>
+              Info
+            </li>
+          </span>
           <li nz-menu-item>
             <a (click)="logout()">Logout</a>
           </li>
 
         </ul>
       </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-      </li>
+
+        <li nz-menu-item >
+          <i nz-icon nzType="usergroup-add"></i>
+          <span routerLink="customer">Customer</span>
+        </li>
+
+      <ul nz-submenu nzTitle="Products" nzIcon="database">
+          <ul>
+            <span routerLink="categorylist">
+              <li nz-menu-item>
+                Category
+              </li>
+            </span>
+            <span routerLink="productlist">
+              <li nz-menu-item>
+                Product
+              </li>
+            </span>
+            <span routerLink="taglist">
+              <li nz-menu-item>
+                Tag
+              </li>
+            </span>
+          </ul>
+      </ul>
       <li nz-menu-item>
         <i nz-icon nzType="file"></i>
-        <span>File</span>
+        <span routerLink="bill">Bill</span>
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header *ngIf="isLoggedIn">
-
-
-           <i
+      <i
         class="trigger"
         nz-icon
         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
         (click)="isCollapsed = !isCollapsed"></i>
 
         <div class="labelLogin">
-        Xin chào, {{user.userName}}
-        <nz-divider nzType="vertical"></nz-divider>
-        <a (click)="logout()">Logout</a>
-        </div>
+          <a nz-dropdown [nzDropdownMenu]="menu">
+            Xin chào, {{user.lastName}}
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu nzSelectable>
+              <li nz-menu-item>Info</li>
+              <li nz-menu-item nzDanger>
+                <a (click)="logout()">Logout</a>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
 
+        </div>
 
 
     </nz-header>

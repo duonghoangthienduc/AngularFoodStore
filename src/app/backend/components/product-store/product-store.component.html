@@ -1,0 +1,30 @@
+<h4>DANH SÁCH KHÁCH HÀNG</h4>
+<nz-table
+      #rowSelectionTable
+      nzShowSizeChanger
+      [nzData]="listOfData"
+      (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+    >
+      <thead>
+        <tr>
+          <th
+            [(nzChecked)]="checked"
+            [nzIndeterminate]="indeterminate"
+            (nzCheckedChange)="onAllChecked($event)"
+          ></th>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Price (VNĐ)</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td [nzChecked]="setOfCheckedId.has(data.productId)" (nzCheckedChange)="onItemChecked(data.productId, $event)"></td>
+          <td>{{ data.productId }} </td>
+          <td>{{ data.productName }}</td>
+          <td>{{ data.price | currency: 'VND':'' }}</td>
+          <td> <a style="color: blue;"> Change</a> | <a style="color: red;">Delete</a> </td>
+        </tr>
+      </tbody>
+</nz-table>

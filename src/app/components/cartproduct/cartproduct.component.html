@@ -17,39 +17,47 @@
 
       <div nz-result-title *ngIf="listCart.length >0">Hóa Đơn Sản Phẩm</div>
 
-      <nz-list-item *ngFor="let cart of listCart">
+      <nz-list-item *ngFor="let cart of listCart, index as i" >
 
-        <label nz-checkbox [(ngModel)]="cart.checked" ></label>
+        <ng-container >
 
-        <ng-container>
           <nz-list-item-extra>
-            <img width="200px" alt="logo" src="{{cart.product.image}}" />
+            <img width="200px" alt="logo" src="{{listProd[i].image}}" />
           </nz-list-item-extra>
           <nz-list-item-meta nzDescription="Tên sản phẩm: ">
-            <nz-list-item-meta-title>
-              {{cart.product.productName}}
+            <nz-list-item-meta-title >
+              {{listProd[i].productName}}
+
+              <!-- {{cart.productId}} -->
             </nz-list-item-meta-title>
             <nz-list-item-meta-title>
-              Đơn giá: {{cart.product.price| currency: 'VND':'' }} VNĐ
+              <!-- Đơn giá: {{product.price| currency: 'VND':'' }} VNĐ -->
+              Đơn giá: {{cart.price| currency: 'VND':'' }} VNĐ
             </nz-list-item-meta-title>
             <nz-list-item-meta-title>
               Số lượng:
               <nz-input-number
-                [(ngModel)]="cart.quantity" [nzMin]="1" [nzDisabled]="!cart.checked">
+                [(ngModel)]="cart.quantity" [nzMin]="1" >
               </nz-input-number>
             </nz-list-item-meta-title>
           </nz-list-item-meta>
-            Thành tiền: {{cart.product.price * cart.quantity | currency: 'VND':'' }} VNĐ
 
+            Thành tiền: {{cart.price * cart.quantity | currency: 'VND':'' }} VNĐ
+            <!-- Thành tiền: {{listCart[i].price * listCart[i].quantity | currency: 'VND':'' }} VNĐ -->
           <ul nz-list-item-actions>
             <nz-list-item-action >
-              <a *ngIf="cart.checked"
-              (click)="updateCartAmount((cart.quantity).toString(),cart.product.productId)">
+              <!-- <a *ngIf="isDisabled"
+              (click)="change(cart.productId)">
+                EDIT
+              </a> -->
+              <a
+              (click)="updateCartAmount((cart.quantity).toString(),cart.productId)">
                 UPDATE
               </a>
             </nz-list-item-action>
             <nz-list-item-action>
-              <a (click)="deleteCart(cart.product.productId)">DELETE</a>
+
+              <a (click)="deleteCart(cart.productId)">DELETE</a>
             </nz-list-item-action>
           </ul>
         </ng-container>
@@ -62,9 +70,15 @@
             <p>Tổng số sản phẩm: {{totalAmount}}</p>
             Tổng giá: {{totalPrice| currency: 'VND':'' }} VNĐ
           </div>
-          <!-- <div nz-col nzSpan="6" nzOffset="6">
-            <button nz-button nzType="primary" nzDanger="true">Thanh toán</button>
-          </div> -->
+          <div nz-col nzSpan="6" nzOffset="6">
+            <button
+              nz-button
+              nzType="primary"
+              nzDanger="true"
+              (click)="showConfirm(totalPrice, cartId)">
+              Thanh toán
+            </button>
+          </div>
         </div>
 
       </nz-list-footer>

@@ -1,0 +1,28 @@
+<h4>DANH MỤC MÓN ĂN</h4>
+<nz-table
+      #rowSelectionTable
+      nzShowSizeChanger
+      [nzData]="listOfData"
+      (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+    >
+      <thead>
+        <tr>
+          <th
+            [(nzChecked)]="checked"
+            [nzIndeterminate]="indeterminate"
+            (nzCheckedChange)="onAllChecked($event)"
+          ></th>
+          <th>Category Id</th>
+          <th>Category Name</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td [nzChecked]="setOfCheckedId.has(data.categoryId)" (nzCheckedChange)="onItemChecked(data.categoryId, $event)"></td>
+          <td>{{ data.categoryId}} </td>
+          <td>{{ data.categoryName }}</td>
+          <td> <a style="color: blue;"> Change</a> | <a style="color: red;">Delete</a> </td>
+        </tr>
+      </tbody>
+</nz-table>

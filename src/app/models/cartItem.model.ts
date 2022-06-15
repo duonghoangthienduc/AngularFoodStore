@@ -1,10 +1,8 @@
-import { Product } from "./product.model";
-
 export class CartItem{
   id ?: number;
-  cartId ?: number;
-  product!: Product;
+  cartId !: number;
+  productId = 0;
   quantity = 0;
   price = 0;
-  checked?:boolean = false;
 }
+

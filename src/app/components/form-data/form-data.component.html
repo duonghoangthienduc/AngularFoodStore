@@ -1,0 +1,101 @@
+<nz-content>
+  <div class="inner-content">
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" >
+  <nz-list-header>
+    <h1>ĐĂNG KÝ ĐẶT HÀNG</h1>
+  </nz-list-header>
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="firstName"
+      nzRequired
+    >
+      <span>First Name</span>
+    </nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your first name!">
+      <input nz-input id="firstName" formControlName="firstName" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="lastName"
+      nzRequired
+    >
+      <span>Last Name</span>
+    </nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your last name!">
+      <input nz-input id="lastName" formControlName="lastName" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="middleName"
+      nzRequired
+    >
+      <span>Middle Name</span>
+    </nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your middle name!">
+      <input nz-input id="middleName" formControlName="middleName" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+      <input nz-input formControlName="email" id="email" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="phone"
+      nzTooltipTitle="Chúng tôi sẽ liên hệ với bạn thông qua số điện thoại đã cung cấp"
+      nzRequired>
+      Phone Number
+    </nz-form-label>
+    <nz-form-control
+      [nzSm]="14"
+      [nzXs]="24"
+      [nzValidateStatus]="validateForm.controls['phone']"
+      nzErrorTip="Please input your phone number!"
+    >
+        <input formControlName="phone" id="'phone'" nz-input  [minlength]="11"/>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="address"
+      nzTooltipTitle="Chúng tôi sẽ giao hàng qua địa chỉ mà bạn cung cấp"
+      nzRequired>
+      Address
+    </nz-form-label>
+    <nz-form-control
+      [nzSm]="14"
+      [nzXs]="24"
+      nzErrorTip="Please input address!"
+      >
+      <input nz-input id="address" formControlName="address" placeholder="Địa chỉ giao hàng" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control >
+      <button nz-button nzType="primary" nzSize="large" (click)="Order()">Đặt hàng</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+  </div>
+</nz-content>

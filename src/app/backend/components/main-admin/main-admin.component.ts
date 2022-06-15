@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { User } from 'src/app/models/user.model';
 import { TokenService } from 'src/app/services/tokenService/token.service';
+
 
 @Component({
   selector: 'app-main-admin',
@@ -12,7 +15,7 @@ export class MainAdminComponent implements OnInit {
   user = new User;
   isCollapsed = false;
 
-  constructor(private tokenStorageService: TokenService) { }
+  constructor(private tokenStorageService: TokenService) {  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getUser();
@@ -23,7 +26,7 @@ export class MainAdminComponent implements OnInit {
   }
   logout(): void {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    window.location.replace('admin');
   }
 
 }

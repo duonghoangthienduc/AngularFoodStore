@@ -1,0 +1,56 @@
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <div>
+      <div>
+        <h5>SỐ LƯỢNG KHÁCH HÀNG</h5>
+        <div class="chart">
+          <canvas baseChart
+                  [type]="pieChartType"
+                  [options]="pieChartOptions"
+                  [data]="pieChartData"
+                  >
+          </canvas>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div nz-col nzSpan="12">
+    <div>
+      <div>
+        <h5>THÔNG TIN CỬA HÀNG</h5>
+        <nz-table [nzData]="dataSet" #outBordered>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên cửa hàng</th>
+            <th>Số điện thoại liên lạc</th>
+            <th>Địa chỉ</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of outBordered.data">
+            <td>{{data.stt}}</td>
+            <td>{{data.storeName}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.address}}</td>
+            <td><a>Detail</a></td>
+          </tr>
+        </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h5>DOANH THU CỬA HÀNG</h5>
+<div style="display: block" height="420px">
+  <canvas baseChart
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [type]="barChartType"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+</div>

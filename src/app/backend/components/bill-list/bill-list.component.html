@@ -1,0 +1,31 @@
+<h4>DANH MỤC MÓN ĂN</h4>
+<nz-table
+      #rowSelectionTable
+      nzShowSizeChanger
+      [nzData]="listOfData"
+      (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+    >
+      <thead>
+        <tr>
+          <th
+            [(nzChecked)]="checked"
+            [nzIndeterminate]="indeterminate"
+            (nzCheckedChange)="onAllChecked($event)"
+          ></th>
+          <th>Bill Id</th>
+          <th>Date</th>
+          <th>Price</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td [nzChecked]="setOfCheckedId.has(data.billId)" (nzCheckedChange)="onItemChecked(data.billId, $event)"></td>
+          <td>{{ data.billId}} </td>
+          <td>{{cartDetail.price}</td>
+          <td>{{ data.dateCreate | date:'medium'}}</td>
+          <td> <a style="color: blue;"> Check</a>  </td>
+        </tr>
+      </tbody>
+</nz-table>
+
